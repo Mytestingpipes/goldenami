@@ -1,9 +1,9 @@
 {
 	"variables": {
 		"name": "{{env `IMAGE_NAME`}}",
-		"subnet_id": "{{env `AWS_SUBNET_ID`}}",
-		"access_key": "{{env `AWS_ACCESS_KEY`}}",
-		"secret_key": "{{env `AWS_SECRET_KEY`}}",
+		"subnet_id": "subnet-09af08b89f393bdc5",
+		"access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+		"secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
 		"project_id": "{{env `GCP_PROJECT_ID`}}",
 		"account_file": "{{env `GCP_SERVICE_ACCOUNT`}}"
 	},
