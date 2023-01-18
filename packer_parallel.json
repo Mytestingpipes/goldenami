@@ -2,9 +2,9 @@
 	"variables": {
 		"name": "{{env `IMAGE_NAME`}}",
 		"subnet_id": "subnet-09af08b89f393bdc5",
-		"access_key": "{{env `AWS_ACCESS_KEY`}}",
-		"secret_key": "{{env `AWS_SECRET_KEY`}}",
-		"region": "{{env `AWS_DEFAULT_REGION`}}",
+		"access_key": "AKIAUQP643LDB3CUNRRZ",
+		"secret_key": "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",
+		"region": "ap-south-1",
 		"project_id": "{{env `GCP_PROJECT_ID`}}",
 		"account_file": "{{env `GCP_SERVICE_ACCOUNT`}}"
 	},
