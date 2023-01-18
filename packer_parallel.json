@@ -15,7 +15,7 @@
 			"access_key": "{{user `access_key`}}",
 			"secret_key": "{{user `secret_key`}}",
 			"ami_name": "packer-Build-{{isotime | clean_resource_name}}",
-			"region": "ap-south-1",
+			"region": "{{env `AWS_DEFAULT_REGION`}}",
 			"instance_type": "t2.micro",
 			"ssh_username": "ubuntu",
 			"subnet_id": "{{user `subnet_id`}}",
