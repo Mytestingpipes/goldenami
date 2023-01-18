@@ -4,6 +4,7 @@
 		"subnet_id": "subnet-09af08b89f393bdc5",
 		"access_key": "{{env `AWS_ACCESS_KEY`}}",
 		"secret_key": "{{env `AWS_SECRET_KEY`}}",
+		"region": "ap-south-1",
 		"project_id": "{{env `GCP_PROJECT_ID`}}",
 		"account_file": "{{env `GCP_SERVICE_ACCOUNT`}}"
 	},
