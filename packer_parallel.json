@@ -2,8 +2,8 @@
 	"variables": {
 		"name": "{{env `IMAGE_NAME`}}",
 		"subnet_id": "subnet-09af08b89f393bdc5",
-		"access_key": "{{env `GCP_PROJECT_ID`}}",
-		"secret_key": "{{env `GCP_PROJECT_ID`}}",
+		"access_key": "{{user `aws_access_key`}}",
+		"secret_key": "{{user `aws_secret_key`}}",
 		"region": "ap-south-1",
 		"project_id": "{{env `GCP_PROJECT_ID`}}",
 		"account_file": "{{env `GCP_SERVICE_ACCOUNT`}}"
