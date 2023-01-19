@@ -18,4 +18,4 @@ jobs:
         uses: mondoohq/actions/terraform-hcl@main
         with:
           service-account-credentials: ${{ secrets.MONDOO_CONFIG_BASE64 }}
-          path: "*.yaml"
+          path: "*.json"
