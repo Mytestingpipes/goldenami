@@ -1,0 +1,37 @@
+name: CD-AWS
+'on':
+  #push:
+    #branches: [ main ]
+  #pull_request:
+    #branches: [ main ]
+  workflow_dispatch: null
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v2
+      - id: auth
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@main
+        id: setup
+        with:
+          version: "1.8.3" # or `latest`
+     
+      - name: Connecting GitHub Actions To AWS Using OIDC - Roles
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+         role-to-assume: arn:aws:iam::363638483937:role/test-pipelines
+         role-session-name: github-actions-session
+         aws-region: us-east-1
+      - run: aws sts get-caller-identity
+
+      
+      - name: Packer Init
+        run: packer init AWSpack.json.pkr.hcl
+
+      - name: Packer Build - Branches
+        run: packer build AWSpack.json.pkr.hcl
