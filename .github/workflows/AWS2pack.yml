@@ -1,9 +1,5 @@
-name: CD-AWS
+name: CD-aws
 'on':
-  #push:
-    #branches: [ main ]
-  #pull_request:
-    #branches: [ main ]
   workflow_dispatch: null
 jobs:
   deploy:
@@ -11,15 +7,14 @@ jobs:
     permissions:
       contents: read
       id-token: write
-
+      
     steps:
       - uses: actions/checkout@v2
-      - id: auth
-      - name: Setup `packer`
-        uses: hashicorp/setup-packer@main
-        id: setup
         with:
-          version: "1.8.3" # or `latest`
+          #path: Zee5-Security-Engineering
+          #fetch-depth: '0'
+          ref: GoldenAmi
+   
      
       - name: Connecting GitHub Actions To AWS Using OIDC - Roles
         uses: aws-actions/configure-aws-credentials@master
@@ -28,9 +23,13 @@ jobs:
          role-session-name: github-actions-session
          aws-region: us-east-1
       - run: aws sts get-caller-identity
-
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@main
+        id: setup
+        with:
+          version: "1.8.3" # or `latest`
       
-      - name: Packer Init
+      - name: Packer Init - Branches
         run: packer init AWSpack.json.pkr.hcl
 
       - name: Packer Build - Branches
