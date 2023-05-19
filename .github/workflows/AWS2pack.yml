@@ -10,6 +10,16 @@ jobs:
       
     steps:
       - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Run Prisma Cloud 
+        id: Prisma Cloud
+        uses: bridgecrewio/checkov-action@master 
+        env:
+          PRISMA_API_URL: https://api.ind.prismacloud.io
+        with:
+          api-key: ${{ secrets.BC_API_KEY }}
    
       - name: Connecting GitHub Actions To AWS Using OIDC - Roles
         uses: aws-actions/configure-aws-credentials@master
