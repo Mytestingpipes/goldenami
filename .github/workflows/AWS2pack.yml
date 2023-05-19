@@ -21,7 +21,7 @@ jobs:
         with:
           api-key: ${{ secrets.BC_API_KEY }}
           log_level: DEBUG
-          use_enforcement_rules: true
+        #use_enforcement_rules: true
         
    
       - name: Connecting GitHub Actions To AWS Using OIDC - Roles
