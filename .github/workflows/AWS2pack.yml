@@ -41,7 +41,7 @@ jobs:
 
 
       - name: Packer Build #- Branches
-        run: "packer build ./AWSpack.json.pkr.hcl"
+        run: "packer validate ./AWSpack.json.pkr.hcl"
         
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
@@ -56,13 +56,12 @@ jobs:
           terraform init
           terraform validate
           terraform plan 
-          terraform apply -auto-approve
           
       - name: Packer Init #- Branches
         run: "packer init ./AWSpack2.json.pkr.hcl"
 
       - name: Packer Build #- Branches
-        run: "packer build ./AWSpack2.json.pkr.hcl"
+        run: "packer validate ./AWSpack2.json.pkr.hcl"
         
       - name: Terraform Apply v2
         env:
@@ -72,4 +71,3 @@ jobs:
           terraform init
           terraform validate
           terraform plan 
-          terraform apply -auto-approve
