@@ -20,7 +20,7 @@ jobs:
           PRISMA_API_URL: https://api.ind.prismacloud.io
         with:
           api-key: ${{ secrets.BC_API_KEY }}
-        #log_level: DEBUG
+          log_level: DEBUG
           use_enforcement_rules: true
         
    
