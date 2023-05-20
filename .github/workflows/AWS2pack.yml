@@ -22,12 +22,7 @@ jobs:
           asset_name: 'goldenami'
           template_type: 'TF'
           template_version: '0.13'
-      - name: Upload scan result artifact
-        uses: actions/upload-artifact@v2
-        if: success() || failure()
-        with:
-          name: iac_scan_result
-          path: ${{ steps.iac-scan.outputs.iac_scan_result_path }}
+
         
    
       - name: Connecting GitHub Actions To AWS Using OIDC - Roles
