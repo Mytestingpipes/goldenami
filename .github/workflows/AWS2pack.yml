@@ -20,7 +20,8 @@ jobs:
         with:
           api-key: ${{ secrets.BC_API_KEY }}
           use_enforcement_rules: true
-          log_level: DEBUG 
+        #log_level: DEBUG
+          Default: High:1,Medium:1,Low:1,Operator:or
 
         
    
