@@ -17,8 +17,8 @@ jobs:
         id: iac-scan
         with:
           prisma_api_url: 'https://api.ind.prismacloud.io'
-          access_key: ${{ secrets.PRISMA_CLOUD_ACCESS_KEY }}
-          secret_key: ${{ secrets.PRISMA_CLOUD_SECRET_KEY }}
+          access_key: 'cb30f999-9590-4a78-b708-1b665785e393'
+          secret_key: 'PzCt06MnmSKMT4dQuvKlGNIps70='
           asset_name: 'goldenami'
           template_type: 'TF'
           template_version: '0.13'
