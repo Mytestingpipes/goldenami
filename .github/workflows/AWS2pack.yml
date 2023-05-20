@@ -8,9 +8,6 @@ jobs:
       contents: read
       id-token: write
       
-
-  prisma_cloud_iac_scan:
-    runs-on: ubuntu-latest
     name: Run Prisma Cloud IaC Scan to check 
     steps:
       - name: Checkout
