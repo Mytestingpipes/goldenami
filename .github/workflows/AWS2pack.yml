@@ -19,9 +19,9 @@ jobs:
           PRISMA_API_URL: https://api.ind.prismacloud.io
         with:
           api-key: ${{ secrets.BC_API_KEY }}
+          Default: High:1,Medium:1,Low:1,Operator:or
           use_enforcement_rules: true
         #log_level: DEBUG
-          Default: High:1,Medium:1,Low:1,Operator:or
 
         
    
