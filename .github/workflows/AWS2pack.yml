@@ -8,8 +8,8 @@ jobs:
       contents: read
       id-token: write
       
-  steps:
-    - name:: 'Checkov GitHub Action'
+steps:
+      - name: Checkout repo
 author: 'Chris Mavrakis'
 description: 'Run Checkov against infrastructure as code, open source packages, container images, and CI/CD configurations as a pre-packaged GitHub Action.'
 inputs:
