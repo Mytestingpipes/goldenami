@@ -7,7 +7,7 @@ variable "availability_zone" {}
 
 variable region {
     description = "AWS Region"
-    default = "us-east-1"
+    default = "ap-south-1"
 }
 
 variable "stack" {
